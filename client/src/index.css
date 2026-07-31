@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #090b1c;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(124, 58, 237, 0.13), transparent 30rem),
+    #090b1c;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.hero-orb {
+  position: absolute;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.hero-orb-left {
+  top: -7rem;
+  left: -9rem;
+  background: #8b5cf6;
+}
+
+.hero-orb-right {
+  right: -10rem;
+  bottom: -8rem;
+  background: #22d3ee;
+}
+
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(to bottom, black, transparent);
+}
+
+.pet-card {
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.pet-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(103, 232, 249, 0.22);
+  box-shadow: 0 24px 65px rgba(3, 7, 28, 0.5);
+}
+
+::selection {
+  background: rgba(103, 232, 249, 0.28);
+  color: white;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
