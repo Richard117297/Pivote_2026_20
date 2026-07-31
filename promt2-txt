@@ -1,0 +1,1554 @@
+# Documentar integralmente el ciclo Scrum simulado de PixelPets en `pivote-2026-20.md`
+
+## 1. Rol
+
+Actúa simultáneamente como:
+
+* Ingeniero de Sistemas e Informática senior.
+* Desarrollador full stack experto en React, TypeScript, Node.js y Express.
+* Especialista en ingeniería de software y aseguramiento de calidad.
+* Scrum Master con conocimiento riguroso de la Guía Scrum 2020.
+* Profesor universitario.
+* Redactor de documentación técnica y académica en Markdown.
+
+Debes documentar el proyecto con lenguaje claro, natural, académico y técnicamente preciso.
+
+El resultado debe parecer elaborado por dos estudiantes universitarios que comprendieron y aplicaron correctamente un ciclo Scrum simulado. No debe parecer un texto genérico, artificial, exagerado ni desconectado de la aplicación implementada.
+
+---
+
+# 2. Objetivo principal
+
+Modificar exclusivamente el archivo:
+
+```text
+pivote-2026-20.md
+```
+
+Debes conservar íntegramente el enunciado original y agregar, debajo de su contenido actual, la documentación completa del desarrollo de la aplicación PixelPets.
+
+La documentación debe explicar y evidenciar:
+
+1. El problema planteado.
+2. La solución desarrollada.
+3. La aplicación del marco de trabajo Scrum.
+4. Los integrantes y sus responsabilidades.
+5. El Objetivo del Producto.
+6. El Objetivo del Sprint.
+7. El Product Backlog.
+8. El Sprint Backlog.
+9. Las ocho historias de usuario.
+10. Las 24 tareas.
+11. La estimación mediante puntos.
+12. La estimación y seguimiento mediante horas.
+13. El Sprint Planning.
+14. Las 12 Daily Scrum simuladas.
+15. El seguimiento diario.
+16. Los dos gráficos Burn Down.
+17. La Sprint Review.
+18. La Sprint Retrospective.
+19. El incremento desarrollado.
+20. La arquitectura y estructura del proyecto.
+21. El flujo funcional de la aplicación.
+22. Las decisiones técnicas y su justificación.
+23. Los endpoints de la API.
+24. Fragmentos de código reales y representativos.
+25. Las pruebas y verificaciones realizadas.
+26. La trazabilidad entre requisitos, historias, código y pruebas.
+27. Las métricas finales.
+28. Las conclusiones.
+29. Las referencias.
+30. Los espacios exactos donde posteriormente se agregarán capturas.
+
+Todo debe quedar en un único archivo Markdown, tal como exige el enunciado.
+
+---
+
+# 3. Alcance estricto de esta tarea
+
+En esta etapa debes trabajar solamente sobre la documentación académica.
+
+## Debes hacer
+
+* Leer completamente el enunciado.
+* Analizar el código real de PixelPets.
+* Leer los dos Excel finales.
+* Extraer sus tablas, métricas y seguimiento.
+* Agregar la documentación debajo del enunciado.
+* Incluir tablas completas en Markdown.
+* Incluir marcadores claros para las capturas.
+* Incluir pies de figura sugeridos.
+* Incluir referencias verificables.
+* Revisar la coherencia completa del documento.
+* Modificar únicamente `pivote-2026-20.md`.
+
+## No debes hacer
+
+* No modificar el enunciado original.
+* No resumir ni reemplazar el enunciado.
+* No modificar el código.
+* No modificar los Excel.
+* No modificar el `README.md`.
+* No crear otro documento académico.
+* No desplegar la aplicación.
+* No crear configuración de despliegue.
+* No crear GitHub Actions.
+* No realizar `push`.
+* No crear Pull Request.
+* No fusionar con `main`.
+* No crear una GitHub Release.
+* No crear commits.
+* No inventar enlaces.
+* No inventar capturas.
+* No inventar resultados.
+* No afirmar que la aplicación ya está desplegada.
+* No afirmar que existe una Release publicada.
+* No llamar Burn Up a una gráfica que representa trabajo restante.
+* No copiar todo el código fuente dentro del documento.
+* No agregar funcionalidades que no existen.
+
+---
+
+# 4. Archivos obligatorios que debes inspeccionar
+
+Antes de redactar, lee completamente o inspecciona cuidadosamente:
+
+```text
+pivote-2026-20.md
+README.md
+package.json
+client/package.json
+server/package.json
+Product_Backlog_PixelPets.xlsx
+Sprint_1_Backlog_PixelPets.xlsx
+```
+
+También debes revisar los archivos principales de la implementación:
+
+```text
+client/src/App.tsx
+client/src/App.test.tsx
+client/src/components/
+client/src/hooks/usePets.ts
+client/src/services/petApi.ts
+client/src/types/pet.ts
+client/src/index.css
+client/vite.config.ts
+
+server/src/app.ts
+server/src/app.test.ts
+server/src/server.ts
+server/src/controllers/petController.ts
+server/src/data/pets.ts
+server/src/data/pets.test.ts
+server/src/domain/pet.ts
+server/src/middleware/errorHandler.ts
+server/src/routes/petRoutes.ts
+server/src/schemas/petQuerySchema.ts
+server/src/services/petService.ts
+server/src/services/petService.test.ts
+```
+
+Inspecciona también:
+
+```bash
+git status --short
+git branch --show-current
+git diff --check
+```
+
+El archivo `Planificacion_Scrum_PixelPets.xlsx`, si existe, no debe reemplazar a los dos Excel finales. Las fuentes principales para las tablas académicas son:
+
+```text
+Product_Backlog_PixelPets.xlsx
+Sprint_1_Backlog_PixelPets.xlsx
+```
+
+Si encuentras una diferencia entre un texto previo y los Excel finales, prevalecen los Excel finales y el código realmente implementado.
+
+---
+
+# 5. Protección obligatoria del enunciado
+
+El contenido original de `pivote-2026-20.md` debe permanecer exactamente igual.
+
+Antes de modificarlo:
+
+1. Registra el tamaño original del archivo.
+2. Conserva una copia temporal únicamente para comprobación.
+3. Agrega la documentación exclusivamente al final.
+4. Después de editar, verifica que el prefijo correspondiente al contenido original permanezca idéntico.
+5. No corrijas errores ortográficos del enunciado del profesor.
+6. No cambies títulos, listas, ejemplos ni enlaces existentes.
+7. Utiliza `apply_patch` para realizar la modificación.
+
+Entre el enunciado y la nueva documentación agrega:
+
+```markdown
+---
+
+# PixelPets — Documentación del ciclo de desarrollo con Scrum
+```
+
+---
+
+# 6. Naturaleza simulada del ciclo
+
+Este es un ejercicio académico simulado.
+
+Debes indicarlo con transparencia, sin reducir la seriedad del trabajo:
+
+> La siguiente documentación reconstruye de manera académica y coherente un ciclo Scrum simulado de 12 días, tomando como evidencia el incremento funcional desarrollado, el Product Backlog, el Sprint Backlog y los resultados técnicos reales del proyecto PixelPets.
+
+No presentes las Daily Scrum, la Sprint Review ni la Retrospective como reuniones reales con un cliente externo.
+
+Puedes presentarlas como eventos simulados realizados por los dos integrantes para demostrar la aplicación completa del marco de trabajo.
+
+No afirmes que el desarrollo histórico ocurrió exactamente en esas fechas. Utiliza:
+
+```text
+Día 1
+Día 2
+...
+Día 12
+```
+
+No inventes fechas de calendario.
+
+---
+
+# 7. Información fija del proyecto
+
+Utiliza estos datos sin alterarlos:
+
+## Proyecto
+
+```text
+PixelPets
+```
+
+## Tipo de producto
+
+```text
+Aplicación web full stack para consultar una vitrina digital de mascotas virtuales.
+```
+
+## Integrantes
+
+```text
+David Ricardo Carvajal Barragán
+Juan Pablo Arenas Avendaño
+```
+
+## Responsabilidades Scrum
+
+| Integrante                      | Responsabilidad principal | Participación adicional |
+| ------------------------------- | ------------------------- | ----------------------- |
+| David Ricardo Carvajal Barragán | Scrum Master              | Desarrollador           |
+| Juan Pablo Arenas Avendaño      | Product Owner             | Desarrollador           |
+
+Explica que, debido a que el ejercicio limita el equipo a dos personas, ambos participaron como desarrolladores y, adicionalmente, asumieron una responsabilidad principal de Scrum.
+
+No presentes esta combinación como la composición ideal para equipos grandes. Justifícala como una adaptación académica necesaria para cumplir la restricción de dos integrantes, conservando la transparencia sobre las responsabilidades.
+
+## Compromiso individual de casos de uso
+
+Documenta:
+
+| Integrante                      | Caso de uso comprometido              |
+| ------------------------------- | ------------------------------------- |
+| David Ricardo Carvajal Barragán | Buscar mascotas por nombre            |
+| Juan Pablo Arenas Avendaño      | Filtrar mascotas por especie y rareza |
+
+Aclara que ambos colaboraron en arquitectura, integración, pruebas, interfaz, documentación y validación.
+
+El ordenamiento por precio y las tareas transversales forman parte del incremento compartido. La asignación de tareas del Excel representa liderazgo o responsabilidad de ejecución, pero no elimina la colaboración del equipo.
+
+---
+
+# 8. Datos inmutables del Sprint
+
+Utiliza exactamente:
+
+```text
+Cantidad de Sprints: 1
+Duración: 12 días simulados
+Historias de usuario: 8
+Tareas: 24
+Puntos planificados: 40
+Puntos completados: 40
+Horas proyectadas: 120
+Horas registradas: 120
+Puntos de David: 20
+Puntos de Juan Pablo: 20
+Release planificada: MVP v1.0
+Estado de las ocho historias: Done
+Estado de las 24 tareas: Done
+```
+
+La relación académica indicada por el profesor es:
+
+```text
+Una hora de clase equivale a un día simulado de trabajo.
+```
+
+Explica que los campos de horas del Excel representan esfuerzo simulado distribuido entre las actividades técnicas del Sprint.
+
+---
+
+# 9. Historias de usuario oficiales
+
+Las historias del Product Backlog son:
+
+| ID    | Historia                                                      | Responsable principal           | Prioridad | Puntos |
+| ----- | ------------------------------------------------------------- | ------------------------------- | --------- | -----: |
+| HU-01 | Configurar arquitectura full stack y entorno de trabajo       | David Ricardo Carvajal Barragán | Alta      |      3 |
+| HU-02 | Exponer el catálogo tipado de PixelPets mediante una API REST | Juan Pablo Arenas Avendaño      | Alta      |      5 |
+| HU-03 | Buscar mascotas por nombre de forma tolerante                 | David Ricardo Carvajal Barragán | Alta      |      5 |
+| HU-04 | Filtrar mascotas por especie y rareza                         | Juan Pablo Arenas Avendaño      | Alta      |      5 |
+| HU-05 | Ordenar por precio y restablecer el catálogo                  | David Ricardo Carvajal Barragán | Media     |      3 |
+| HU-06 | Consultar el catálogo en una interfaz responsive y accesible  | Juan Pablo Arenas Avendaño      | Alta      |      8 |
+| HU-07 | Verificar la calidad técnica y la ejecución en producción     | David Ricardo Carvajal Barragán | Alta      |      8 |
+| HU-08 | Documentar y validar la entrega del incremento                | Juan Pablo Arenas Avendaño      | Media     |      3 |
+
+Total:
+
+```text
+40 puntos
+```
+
+No cambies estos nombres, responsables, prioridades ni puntos.
+
+Para cada historia agrega:
+
+1. Identificador.
+2. Nombre.
+3. Redacción “Como..., quiero..., para...”.
+4. Contexto.
+5. Valor aportado.
+6. Criterios de aceptación verificables.
+7. Tareas relacionadas.
+8. Evidencia técnica.
+9. Estado final.
+10. Relación con archivos o pruebas.
+
+Las historias HU-01, HU-02, HU-07 y HU-08 pueden identificarse como historias técnicas o habilitadoras. Explícalo de manera sencilla.
+
+Los criterios de aceptación deben salir del código, los tests, el README y el enunciado. No inventes requisitos externos.
+
+---
+
+# 10. Objetivo del Producto y Objetivo del Sprint
+
+## Objetivo del Producto
+
+Redacta un objetivo equivalente a:
+
+> Construir una vitrina digital atractiva, fluida, accesible y funcional para que los usuarios puedan consultar mascotas virtuales, buscar por nombre, filtrar por especie y rareza y ordenar los resultados por precio, visualizando siempre la información esencial de cada mascota.
+
+## Objetivo del Sprint
+
+Redacta un objetivo equivalente a:
+
+> Entregar en un único Sprint de 12 días simulados un incremento full stack funcional de PixelPets que permita consultar el catálogo desde una API REST, combinar búsqueda, filtros y ordenamiento, visualizar estados de interfaz y verificar la calidad mediante pruebas automatizadas.
+
+Relaciona cada objetivo con los compromisos definidos en Scrum:
+
+* Objetivo del Producto → Product Backlog.
+* Objetivo del Sprint → Sprint Backlog.
+* Definición de Terminado → Incremento.
+
+---
+
+# 11. Alcance funcional
+
+Documenta las funcionalidades realmente implementadas:
+
+1. Consultar las 18 mascotas.
+2. Buscar por nombre.
+3. Buscar mediante coincidencias parciales.
+4. Ignorar mayúsculas y minúsculas.
+5. Normalizar tildes.
+6. Eliminar espacios externos.
+7. Filtrar por especie.
+8. Filtrar por rareza.
+9. Combinar filtros.
+10. Combinar búsqueda y filtros.
+11. Ordenar por precio ascendente.
+12. Ordenar por precio descendente.
+13. Restablecer el catálogo.
+14. Mostrar cantidad de resultados.
+15. Mostrar estado de carga.
+16. Mostrar estado de error.
+17. Permitir reintentar la consulta.
+18. Mostrar estado sin coincidencias.
+19. Limpiar los filtros desde el estado vacío.
+20. Utilizar la aplicación mediante teclado.
+21. Mostrar foco visible.
+22. Respetar reducción de movimiento.
+23. Adaptarse a celular, tableta y computador.
+24. Consultar las opciones de filtros desde el backend.
+
+## Fuera del alcance
+
+Documenta que no se implementaron:
+
+* Autenticación.
+* Registro.
+* Roles de usuario.
+* CRUD de mascotas.
+* Base de datos.
+* Compras.
+* Pagos.
+* Carrito.
+* Favoritos persistentes.
+* Panel administrativo.
+* Servicios externos.
+* WebSockets.
+* Microservicios.
+* Despliegue en esta etapa.
+
+Justifica el alcance indicando que el caso práctico exige una vitrina de consulta, búsqueda, filtrado y ordenamiento, no un sistema transaccional.
+
+---
+
+# 12. Product Backlog completo en Markdown
+
+Crea el apartado:
+
+```markdown
+## Product Backlog
+```
+
+Explica:
+
+* Cómo se originó a partir del caso práctico.
+* Cómo se priorizó.
+* Por qué se utilizó una escala Fibonacci.
+* Por qué las historias de calidad y accesibilidad tienen mayor estimación.
+* Cómo se distribuyeron los 40 puntos.
+* Cómo se aseguró la colaboración.
+
+Después, reproduce en Markdown todas las filas de:
+
+```text
+Product_Backlog_PixelPets.xlsx
+```
+
+Incluye exactamente las columnas:
+
+| HU-ID | TASK-ID | HU/TASK | ASIGNADO A | PRIORIDAD | ESTADO | PUNTOS US | SPRINT | RELEASE |
+
+No omitas ninguna de las:
+
+```text
+8 historias
+24 tareas
+```
+
+No cambies:
+
+* Identificadores.
+* Textos.
+* Responsables.
+* Prioridades.
+* Estados.
+* Puntos.
+* Sprint.
+* Release.
+
+Después de la tabla agrega exactamente un marcador como este:
+
+> **📸 EVIDENCIA PB-01 — Product Backlog completo**
+>
+> Insertar aquí una captura completa de la hoja `Product Backlog` del archivo `Product_Backlog_PixelPets.xlsx`. La captura debe permitir comprobar las ocho historias, las 24 tareas, responsables, prioridades, estados, puntos, Sprint y release.
+>
+> **Pie de figura sugerido:** Figura 1. Product Backlog de PixelPets con las historias y tareas priorizadas para el MVP v1.0. Fuente: elaboración propia.
+
+## Aclaración sobre la gráfica del Product Backlog
+
+El archivo `Product_Backlog_PixelPets.xlsx` contiene la tabla, pero no contiene una gráfica.
+
+Por lo tanto:
+
+* No inventes una gráfica.
+* No agregues un espacio para una gráfica inexistente.
+* No afirmes que el Product Backlog tiene Burn Up.
+* Indica que las gráficas de seguimiento se encuentran en el Sprint Backlog.
+
+---
+
+# 13. Sprint Planning
+
+Crea un apartado que documente:
+
+1. Participantes.
+2. Objetivo del evento.
+3. Objetivo del Sprint.
+4. Capacidad del Sprint.
+5. Selección de las ocho historias.
+6. Descomposición en 24 tareas.
+7. Criterio de priorización.
+8. Distribución de responsabilidades.
+9. Riesgos identificados.
+10. Definición de Terminado.
+11. Resultado del evento.
+
+## Definición de Preparado
+
+Incluye una Definition of Ready sencilla:
+
+Una historia podía seleccionarse cuando:
+
+* Tenía propósito claro.
+* Tenía valor identificable.
+* Tenía criterios de aceptación.
+* Podía estimarse.
+* Cabía dentro del Sprint.
+* No dependía de información externa pendiente.
+
+## Definición de Terminado
+
+El incremento se consideró terminado cuando:
+
+* Cumplía los criterios funcionales.
+* El frontend consumía la API real.
+* No existía duplicación del catálogo.
+* TypeScript compilaba sin errores.
+* ESLint terminaba sin errores ni advertencias.
+* Las pruebas automatizadas aprobaban.
+* El build de producción se generaba correctamente.
+* Los estados de carga, error y vacío funcionaban.
+* La interfaz era navegable mediante teclado.
+* El README coincidía con los scripts reales.
+* El enunciado original permanecía intacto.
+
+---
+
+# 14. Sprint Backlog por puntos
+
+Crea:
+
+```markdown
+## Sprint Backlog — Seguimiento por puntos
+```
+
+Reproduce completamente en Markdown la hoja:
+
+```text
+Sprint Backlog - P-US
+```
+
+Debes incluir:
+
+* HU-ID.
+* TASK-ID.
+* HU/TASK.
+* Asignado a.
+* Estado.
+* P-US asignados.
+* P-US realizados.
+* Día 1 hasta Día 12.
+* Avance esperado.
+* Avance real.
+* Puntos realizados diariamente.
+
+No omitas ninguna historia ni tarea.
+
+Si una tabla única resulta demasiado ancha, divídela en:
+
+1. Tabla de identificación, asignación y puntos.
+2. Tabla de seguimiento diario Día 1 a Día 6.
+3. Tabla de seguimiento diario Día 7 a Día 12.
+4. Tabla resumen del Burn Down.
+
+La división debe ser únicamente visual. No puede perderse ningún dato.
+
+Después de las tablas agrega, en este orden:
+
+> **📸 EVIDENCIA SB-01 — Sprint Backlog completo por puntos**
+>
+> Insertar aquí una captura completa de la tabla de la hoja `Sprint Backlog - P-US`, incluyendo las ocho historias, las 24 tareas, los puntos asignados, los puntos realizados y el avance de los 12 días.
+>
+> **Pie de figura sugerido:** Figura 2. Seguimiento del Sprint Backlog de PixelPets mediante puntos de historia. Fuente: elaboración propia.
+
+Inmediatamente después:
+
+> **📸 EVIDENCIA SB-02 — Gráfica Burn Down de puntos**
+>
+> Insertar aquí una captura de la gráfica titulada `Burn Down Puntos US`, mostrando la comparación entre avance esperado y avance real desde el Día 0 hasta el Día 12.
+>
+> **Pie de figura sugerido:** Figura 3. Burn Down de puntos del Sprint 1; la trayectoria real se mantuvo cercana a la planeada y finalizó con cero puntos pendientes. Fuente: elaboración propia.
+
+Después analiza la gráfica:
+
+* Inicio: 40 puntos pendientes.
+* Final: 0 puntos pendientes.
+* Puntos completados: 40.
+* Cumplimiento: 100 %.
+* Promedio planificado: aproximadamente 3,33 puntos por día.
+* Las diferencias diarias fueron pequeñas.
+* El equipo recuperó las desviaciones antes del cierre.
+* No generalices la velocidad futura basándote en un solo Sprint.
+
+Esta gráfica es Burn Down porque representa trabajo restante decreciente. No la llames Burn Up.
+
+---
+
+# 15. Sprint Backlog por horas
+
+Crea:
+
+```markdown
+## Sprint Backlog — Seguimiento por horas
+```
+
+Reproduce completamente en Markdown la hoja:
+
+```text
+Sprint Backlog - Tiempo
+```
+
+Incluye:
+
+* HU-ID.
+* TASK-ID.
+* HU/TASK.
+* Responsable.
+* Estado.
+* Tiempo proyectado.
+* Horas invertidas.
+* Día 1 a Día 12.
+* Tiempo esperado restante.
+* Tiempo real restante.
+* Horas invertidas por día.
+
+Si la tabla es demasiado ancha, divídela sin perder datos.
+
+Después agrega, en este orden:
+
+> **📸 EVIDENCIA ST-01 — Sprint Backlog completo por horas**
+>
+> Insertar aquí una captura completa de la tabla de la hoja `Sprint Backlog - Tiempo`, incluyendo horas proyectadas, horas invertidas y distribución diaria.
+>
+> **Pie de figura sugerido:** Figura 4. Seguimiento del esfuerzo simulado del Sprint 1 mediante horas por historia y tarea. Fuente: elaboración propia.
+
+Inmediatamente después:
+
+> **📸 EVIDENCIA ST-02 — Gráfica Burn Down de horas**
+>
+> Insertar aquí una captura de la gráfica titulada `Burn Down horas invertidas en el SPRINT`, mostrando la comparación entre tiempo proyectado y tiempo real restante.
+>
+> **Pie de figura sugerido:** Figura 5. Burn Down de horas del Sprint 1; el esfuerzo real presentó pequeñas variaciones diarias y cerró con cero horas pendientes. Fuente: elaboración propia.
+
+Analiza:
+
+* Horas proyectadas: 120.
+* Horas registradas: 120.
+* Cumplimiento total: 100 %.
+* Día final: cero horas pendientes.
+* Las variaciones por historia se compensaron dentro del Sprint.
+* No confundas horas invertidas con puntos de historia.
+* Los puntos representan esfuerzo relativo.
+* Las horas representan seguimiento temporal simulado.
+
+Esta gráfica también es Burn Down. No la llames Burn Up.
+
+---
+
+# 16. Tabla de notas
+
+Crea:
+
+```markdown
+## Distribución individual y tabla de notas
+```
+
+Reproduce los datos relevantes de la hoja:
+
+```text
+Tabla Notas
+```
+
+Incluye:
+
+1. Las 24 asignaciones de tareas y sus puntos.
+2. El resumen por estudiante.
+3. Total de puntos asignados.
+4. Total de puntos realizados.
+5. Porcentaje basado en el promedio.
+6. Nota basada en el promedio.
+7. Porcentaje de rendimiento individual.
+8. Nota individual.
+
+El resumen debe quedar exactamente así:
+
+| Estudiante                      | Puntos asignados | Puntos realizados | Cumplimiento | Nota |
+| ------------------------------- | ---------------: | ----------------: | -----------: | ---: |
+| David Ricardo Carvajal Barragán |               20 |                20 |        100 % | 5,00 |
+| Juan Pablo Arenas Avendaño      |               20 |                20 |        100 % | 5,00 |
+| Total                           |               40 |                40 |        100 % |    — |
+
+Después agrega:
+
+> **📸 EVIDENCIA TN-01 — Tabla de notas**
+>
+> Insertar aquí una captura completa de la hoja `Tabla Notas`, incluyendo la asignación de puntos, el resumen por estudiante y las notas calculadas.
+>
+> **Pie de figura sugerido:** Figura 6. Distribución equilibrada de puntos y resultado individual de los integrantes del proyecto PixelPets. Fuente: elaboración propia.
+
+Explica que:
+
+* Ambos recibieron 20 puntos.
+* Ambos completaron 20 puntos.
+* La distribución fue equilibrada.
+* Ambos participaron en todas las etapas.
+* La asignación principal no significa trabajo aislado.
+
+---
+
+# 17. Seguimiento diario obligatorio
+
+Documenta 12 Daily Scrum simuladas.
+
+Cada Daily debe tener:
+
+```markdown
+### Daily Scrum — Día X
+```
+
+Y estas subsecciones:
+
+* Trabajo completado.
+* Trabajo planeado.
+* Impedimentos.
+* Decisiones o ajustes.
+* Puntos completados.
+* Puntos restantes.
+* Horas registradas.
+* Horas restantes.
+* Evidencia relacionada.
+
+Utiliza esta información exacta:
+
+| Día | Puntos completados | Puntos restantes | Horas registradas |                                                       Horas restantes | Trabajo principal                                                               |
+| --: | -----------------: | ---------------: | ----------------: | --------------------------------------------------------------------: | ------------------------------------------------------------------------------- |
+|   1 |               3,00 |            37,00 |                 8 |                                                                   112 | Arquitectura full stack, monorepo, TypeScript, Vite, Tailwind, ESLint y scripts |
+|   2 |               3,71 |            33,29 |                12 |          Tipos de dominio, catálogo de 18 mascotas y servicio inicial |                                                                                 |
+|   3 |               3,29 |            30,00 |                10 |            Finalización del catálogo y comienzo de búsqueda tolerante |                                                                                 |
+|   4 |               3,33 |            26,67 |                11 |        Debounce, cancelación, pruebas de búsqueda e inicio de filtros |                                                                                 |
+|   5 |               3,00 |            23,67 |                 9 |                   Selectores dinámicos y filtros por especie y rareza |                                                                                 |
+|   6 |               3,67 |            20,00 |                10 |                           Filtros combinados, limpieza y ordenamiento |                                                                                 |
+|   7 |               3,67 |            16,33 |                11 |          Integración del ordenamiento e inicio de interfaz responsive |                                                                                 |
+|   8 |               2,73 |            13,60 |                 9 |             Diseño responsive, accesibilidad y navegación por teclado |                                                                                 |
+|   9 |               4,10 |             9,50 |                12 |                       Estados de interfaz e inicio de pruebas backend |                                                                                 |
+|  10 |               2,70 |             6,80 |                 8 |                                            Pruebas backend y frontend |                                                                                 |
+|  11 |               3,47 |             3,33 |                11 |               Pruebas frontend, typecheck, lint, build y validaciones |                                                                                 |
+|  12 |               3,33 |             0,00 |                 9 | Cierre técnico, README, integridad de Git y validación del incremento |                                                                                 |
+
+Los impedimentos deben ser realistas y moderados. Ejemplos válidos:
+
+* Coordinación entre listas de filtros y backend.
+* Evitar solicitudes obsoletas.
+* Mantener estable el ordenamiento con precios repetidos.
+* Simular correctamente la API en frontend.
+* Ajustar accesibilidad sin afectar el diseño.
+* Asegurar que Express sirviera el build de React.
+
+No inventes bloqueos graves ni problemas que contradigan el resultado final.
+
+Aclara que la Daily Scrum sirve para inspeccionar el avance hacia el Objetivo del Sprint y adaptar el plan, no para rendir informes a una autoridad.
+
+---
+
+# 18. Aplicación del ciclo Scrum
+
+Crea una tabla:
+
+| Evento o actividad   | Propósito                                 | Participantes                             | Resultado                                 |
+| -------------------- | ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| Sprint Planning      | Definir por qué, qué y cómo se trabajaría | Ambos integrantes                         | Objetivo del Sprint, ocho HU y 24 tareas  |
+| Daily Scrum          | Inspeccionar avance y adaptar el plan     | Ambos desarrolladores                     | Seguimiento de 12 días                    |
+| Refinamiento         | Aclarar y descomponer trabajo             | Ambos integrantes                         | Historias entendibles y tareas estimables |
+| Sprint Review        | Inspeccionar el incremento                | Ambos integrantes en simulación académica | Aceptación de 40 puntos                   |
+| Sprint Retrospective | Identificar mejoras                       | Ambos integrantes                         | Acciones de mejora                        |
+
+Aclara que el refinamiento es una actividad continua, no uno de los eventos formales de Scrum.
+
+---
+
+# 19. Arquitectura de la solución
+
+Documenta que se utilizó un monorepo full stack:
+
+## Frontend
+
+* React.
+* Vite.
+* TypeScript estricto.
+* Tailwind CSS.
+* Lucide React.
+* Vitest.
+* React Testing Library.
+
+## Backend
+
+* Node.js.
+* Express.
+* TypeScript.
+* Zod.
+* Vitest.
+* Supertest.
+
+## Almacenamiento
+
+* Catálogo local tipado en el backend.
+* Sin base de datos.
+
+Justifica la ausencia de base de datos:
+
+* El caso solamente exige consulta.
+* No existe CRUD.
+* No existe autenticación.
+* No existe persistencia.
+* Reduce complejidad innecesaria.
+* Mantiene una separación full stack real.
+* El frontend consume los datos mediante API REST.
+* El catálogo no se duplica en el frontend.
+
+Incluye un diagrama Mermaid compacto:
+
+```mermaid
+flowchart LR
+    U[Usuario] --> UI[React]
+    UI --> API[API REST Express]
+    API --> S[Servicio de mascotas]
+    S --> C[Catálogo tipado]
+```
+
+---
+
+# 20. Estructura del proyecto
+
+Incluye un árbol basado en los archivos reales.
+
+Debe mostrar como mínimo:
+
+```text
+PixelPets/
+├── client/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── services/
+│   │   ├── test/
+│   │   ├── types/
+│   │   ├── App.tsx
+│   │   ├── App.test.tsx
+│   │   ├── index.css
+│   │   └── main.tsx
+│   ├── package.json
+│   ├── tsconfig.json
+│   └── vite.config.ts
+├── server/
+│   ├── src/
+│   │   ├── controllers/
+│   │   ├── data/
+│   │   ├── domain/
+│   │   ├── middleware/
+│   │   ├── routes/
+│   │   ├── schemas/
+│   │   ├── services/
+│   │   ├── app.ts
+│   │   ├── app.test.ts
+│   │   └── server.ts
+│   ├── package.json
+│   └── tsconfig.json
+├── package.json
+├── package-lock.json
+├── README.md
+└── pivote-2026-20.md
+```
+
+No incluyas:
+
+* `node_modules`.
+* `dist`.
+* `tsconfig.tsbuildinfo`.
+* Archivos temporales.
+* Archivos personales.
+* Rutas absolutas de Windows.
+
+Explica la responsabilidad de cada carpeta.
+
+---
+
+# 21. Flujo funcional de PixelPets
+
+Explica paso a paso:
+
+1. El usuario abre PixelPets.
+2. React inicializa la interfaz.
+3. El frontend consulta `/api/pets/options`.
+4. El frontend consulta `/api/pets`.
+5. El backend valida los parámetros con Zod.
+6. El servicio parte de una copia del catálogo.
+7. Aplica búsqueda.
+8. Aplica filtros.
+9. Aplica ordenamiento.
+10. Devuelve `data` y `meta`.
+11. React muestra el resultado.
+12. Si cambia un control, se genera una nueva consulta.
+13. El debounce evita solicitudes excesivas.
+14. `AbortController` cancela solicitudes obsoletas.
+15. Limpiar restablece los controles y el catálogo.
+
+Incluye un flujo Mermaid:
+
+```mermaid
+flowchart TD
+    A[Ingresar a PixelPets] --> B[Cargar catálogo y opciones]
+    B --> C{Aplicar controles}
+    C --> D[Buscar]
+    C --> E[Filtrar]
+    C --> F[Ordenar]
+    D --> G[Consultar API]
+    E --> G
+    F --> G
+    G --> H{¿Hay resultados?}
+    H -->|Sí| I[Mostrar tarjetas]
+    H -->|No| J[Mostrar estado vacío]
+```
+
+---
+
+# 22. Endpoints
+
+Incluye:
+
+| Método | Endpoint            | Propósito                                            |
+| ------ | ------------------- | ---------------------------------------------------- |
+| GET    | `/api/health`       | Comprobar el estado del servicio                     |
+| GET    | `/api/pets`         | Consultar, buscar, filtrar y ordenar mascotas        |
+| GET    | `/api/pets/options` | Obtener especies, rarezas y opciones de ordenamiento |
+
+Documenta los parámetros:
+
+```text
+search
+species
+rarity
+sort
+```
+
+Valores de ordenamiento:
+
+```text
+price-asc
+price-desc
+```
+
+Incluye ejemplos:
+
+```http
+GET /api/pets
+GET /api/pets?search=luna
+GET /api/pets?species=Robot
+GET /api/pets?rarity=Legendario
+GET /api/pets?sort=price-asc
+GET /api/pets?search=luna&species=Gato%20Cósmico&rarity=Raro&sort=price-desc
+```
+
+Aclara:
+
+* Parámetros inválidos → `400`.
+* Consulta sin coincidencias → `200` con `data: []`.
+* Los errores siguen una estructura consistente.
+* No se exponen trazas internas.
+
+---
+
+# 23. Fragmentos de código
+
+El enunciado explica cómo incluir código, pero no exige copiar todo el proyecto.
+
+Incluye solamente fragmentos breves y representativos extraídos literalmente del código actual.
+
+Agrega como máximo:
+
+1. Interfaz `Pet`.
+2. Esquema Zod de consulta.
+3. Normalización y filtrado.
+4. Rutas de mascotas.
+5. Solicitud del frontend.
+6. Un ejemplo corto de prueba.
+7. Scripts principales de ejecución.
+
+Cada fragmento debe:
+
+* Indicar el archivo de origen.
+* Tener entre 5 y 25 líneas.
+* Ser código real.
+* Mantener el lenguaje del bloque.
+* Tener una explicación breve.
+* No contener secretos.
+* No contener rutas personales.
+* No inventar nombres.
+* No copiar archivos completos.
+
+Ejemplo de encabezado:
+
+```markdown
+### Modelo tipado de una mascota
+
+Archivo: `server/src/domain/pet.ts`
+```
+
+---
+
+# 24. Decisiones técnicas justificadas
+
+Crea una tabla:
+
+| Decisión | Justificación | Beneficio | Evidencia |
+| -------- | ------------- | --------- | --------- |
+
+Incluye al menos:
+
+1. Arquitectura full stack.
+2. Monorepo.
+3. React por componentes.
+4. Express y rutas modulares.
+5. TypeScript estricto.
+6. Catálogo únicamente en backend.
+7. Ausencia de base de datos.
+8. Zod para validación.
+9. Opciones dinámicas desde la API.
+10. Debounce de 300 ms.
+11. `AbortController`.
+12. Ordenamiento sobre una copia.
+13. Estados de carga, error y vacío.
+14. Accesibilidad mediante teclado.
+15. Diseño responsive.
+16. Pruebas backend y frontend.
+17. Build servido por Express.
+18. Ausencia de servicios externos.
+19. Un solo Sprint.
+20. Estimación Fibonacci.
+
+Toda justificación debe relacionarse con el alcance, el tiempo académico, el mantenimiento, la calidad o el riesgo.
+
+No utilices frases vacías como “porque es mejor” o “porque es moderno”.
+
+---
+
+# 25. Matriz de trazabilidad
+
+Incluye:
+
+| Requisito | Historia | Implementación | Prueba | Estado |
+| --------- | -------- | -------------- | ------ | ------ |
+
+Relaciona como mínimo:
+
+* Catálogo → HU-02.
+* Búsqueda → HU-03.
+* Filtro por especie → HU-04.
+* Filtro por rareza → HU-04.
+* Orden ascendente → HU-05.
+* Orden descendente → HU-05.
+* Limpiar → HU-05.
+* Responsive → HU-06.
+* Accesibilidad → HU-06.
+* Carga/error/vacío → HU-06.
+* Pruebas backend → HU-07.
+* Pruebas frontend → HU-07.
+* Build de producción → HU-07.
+* README e integridad → HU-08.
+
+Incluye archivos y pruebas reales.
+
+---
+
+# 26. Pruebas y calidad
+
+Documenta los resultados reales ya verificados:
+
+```text
+Typecheck: aprobado
+Lint: aprobado
+Errores de lint: 0
+Advertencias de lint: 0
+Pruebas totales: 38
+Pruebas frontend: 14
+Pruebas backend: 24
+Pruebas fallidas: 0
+Build frontend: aprobado
+Build backend: aprobado
+npm audit: 0 vulnerabilidades
+git diff --check: aprobado
+npm start: comprobado
+```
+
+Documenta también:
+
+* `/api/health` respondió correctamente.
+* La búsqueda combinada respondió correctamente.
+* El frontend fue servido correctamente.
+* El fallback SPA respondió correctamente.
+* La inspección visual de escritorio fue satisfactoria.
+* La aplicación está preparada para 320 px.
+* La comprobación final en teléfono real o modo dispositivo puede registrarse como evidencia manual pendiente si todavía no existe.
+
+No digas que ejecutaste nuevamente estos comandos durante esta tarea documental salvo que realmente los ejecutes.
+
+Incluye:
+
+```bash
+npm install
+npm run dev
+npm run typecheck
+npm run lint
+npm run test
+npm run build
+npm start
+```
+
+Después agrega:
+
+> **📸 EVIDENCIA QA-01 — Pruebas automatizadas**
+>
+> Insertar aquí una captura de la terminal mostrando las 38 pruebas aprobadas: 14 del frontend y 24 del backend.
+>
+> **Pie de figura sugerido:** Figura 7. Resultado de las pruebas automatizadas de PixelPets con 38 pruebas aprobadas y cero fallidas. Fuente: elaboración propia.
+
+> **📸 EVIDENCIA QA-02 — Lint y comprobación de tipos**
+>
+> Insertar aquí una captura de la terminal mostrando `npm run typecheck` y `npm run lint` aprobados.
+>
+> **Pie de figura sugerido:** Figura 8. Verificación estática del proyecto mediante TypeScript estricto y ESLint. Fuente: elaboración propia.
+
+> **📸 EVIDENCIA QA-03 — Build de producción**
+>
+> Insertar aquí una captura de la terminal mostrando `npm run build` aprobado.
+>
+> **Pie de figura sugerido:** Figura 9. Compilación satisfactoria del frontend y backend de PixelPets. Fuente: elaboración propia.
+
+---
+
+# 27. Evidencias funcionales de la aplicación
+
+Agrega estos marcadores en las secciones donde corresponda:
+
+> **📸 EVIDENCIA APP-01 — Vista inicial**
+>
+> Insertar aquí una captura de la página inicial mostrando el encabezado, el panel de filtros, el contador y el catálogo.
+>
+> **Pie de figura sugerido:** Figura 10. Vista inicial de PixelPets con las 18 mascotas disponibles. Fuente: elaboración propia.
+
+> **📸 EVIDENCIA APP-02 — Búsqueda**
+>
+> Insertar aquí una captura de una búsqueda parcial por nombre.
+>
+> **Pie de figura sugerido:** Figura 11. Búsqueda parcial de mascotas por nombre sin recargar la aplicación. Fuente: elaboración propia.
+
+> **📸 EVIDENCIA APP-03 — Filtros combinados**
+>
+> Insertar aquí una captura aplicando simultáneamente especie y rareza.
+>
+> **Pie de figura sugerido:** Figura 12. Aplicación combinada de los filtros por especie y rareza. Fuente: elaboración propia.
+
+> **📸 EVIDENCIA APP-04 — Ordenamiento**
+>
+> Insertar aquí una captura mostrando el ordenamiento por precio.
+>
+> **Pie de figura sugerido:** Figura 13. Catálogo ordenado por precio mediante los controles de PixelPets. Fuente: elaboración propia.
+
+> **📸 EVIDENCIA APP-05 — Estado sin resultados**
+>
+> Insertar aquí una captura del estado vacío con el botón para limpiar los controles.
+>
+> **Pie de figura sugerido:** Figura 14. Estado sin coincidencias y mecanismo de recuperación mediante limpieza de filtros. Fuente: elaboración propia.
+
+> **📸 EVIDENCIA APP-06 — Diseño responsive**
+>
+> Insertar aquí una captura desde el modo dispositivo del navegador o un teléfono.
+>
+> **Pie de figura sugerido:** Figura 15. Adaptación responsive de PixelPets para dispositivos móviles. Fuente: elaboración propia.
+
+No insertes imágenes ficticias. Deja los marcadores para que el usuario agregue posteriormente las capturas reales.
+
+---
+
+# 28. Sprint Review
+
+Documenta una Sprint Review simulada.
+
+Incluye:
+
+1. Objetivo.
+2. Incremento presentado.
+3. Funcionalidades demostradas.
+4. Resultados de pruebas.
+5. Comparación con criterios de aceptación.
+6. Historias aceptadas.
+7. Puntos aceptados.
+8. Observaciones.
+9. Resultado final.
+
+Conclusión:
+
+```text
+8 de 8 historias aceptadas
+24 de 24 tareas completadas
+40 de 40 puntos aceptados
+Incremento funcional disponible localmente
+```
+
+Aclara que fue una validación académica interna de los integrantes y no una aceptación contractual de un cliente externo.
+
+---
+
+# 29. Sprint Retrospective
+
+Utiliza una estructura:
+
+## Mantener
+
+* Comunicación constante.
+* División clara de responsabilidades.
+* Pruebas tempranas.
+* Código tipado.
+* Integración frecuente.
+* Seguimiento diario.
+
+## Mejorar
+
+* Validar antes en dispositivo móvil.
+* Distribuir mejor la documentación durante el Sprint.
+* Preparar las capturas al completar cada historia.
+* Evitar concentrar validaciones en los últimos días.
+
+## Dejar de hacer
+
+* Posponer evidencias visuales.
+* Depender de verificaciones manuales tardías.
+* Agrupar demasiadas actividades de cierre en el Día 12.
+
+## Acciones concretas
+
+* Agregar validación móvil temprana.
+* Registrar evidencias por historia.
+* Actualizar documentación diariamente.
+* Mantener una lista de comprobación de Definition of Done.
+
+No inventes conflictos personales.
+
+---
+
+# 30. Métricas finales
+
+Incluye una tabla:
+
+| Métrica                   | Resultado |
+| ------------------------- | --------: |
+| Historias planificadas    |         8 |
+| Historias completadas     |         8 |
+| Cumplimiento de historias |     100 % |
+| Tareas planificadas       |        24 |
+| Tareas completadas        |        24 |
+| Cumplimiento de tareas    |     100 % |
+| Puntos planificados       |        40 |
+| Puntos completados        |        40 |
+| Cumplimiento de puntos    |     100 % |
+| Horas proyectadas         |       120 |
+| Horas registradas         |       120 |
+| Puntos de David           |        20 |
+| Puntos de Juan Pablo      |        20 |
+| Pruebas automatizadas     |        38 |
+| Pruebas fallidas          |         0 |
+| Mascotas del catálogo     |        18 |
+| Endpoints principales     |         3 |
+| Sprints                   |         1 |
+| Duración simulada         |   12 días |
+
+Aclara que la velocidad observada fue 40 puntos en este Sprint, pero un solo Sprint no permite establecer una predicción estadística confiable de velocidad futura.
+
+---
+
+# 31. Estado del repositorio y despliegue
+
+Documenta de forma veraz:
+
+```text
+Rama base: main
+Rama de trabajo: feature/pixelpets-aplicacion-completa
+Merge con main: no realizado
+Push: no realizado
+Pull Request: no creado
+Despliegue: pendiente
+GitHub Release: pendiente
+```
+
+Incluye los marcadores:
+
+```markdown
+## Enlaces del proyecto
+
+- **Repositorio de GitHub:** PENDIENTE_DE_AGREGAR
+- **Aplicación desplegada:** PENDIENTE_DE_AGREGAR
+- **Release MVP v1.0:** PENDIENTE_DE_PUBLICAR
+```
+
+No conviertas los marcadores en enlaces falsos.
+
+Aclara que `MVP v1.0` es la release planificada en el Product Backlog, pero todavía no equivale a una GitHub Release publicada.
+
+---
+
+# 32. Referencias y citas
+
+Utiliza citas numéricas dentro del texto:
+
+```text
+[1]
+[2]
+[3]
+```
+
+Agrega al final una sección:
+
+```markdown
+## Referencias
+```
+
+Utiliza fuentes oficiales y relaciona cada una únicamente con afirmaciones que realmente respalde.
+
+Incluye como mínimo:
+
+1. Schwaber, K. y Sutherland, J. Guía Scrum 2020, traducción latinoamericana:
+   https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-Spanish-Latin-South-American.pdf
+
+2. MDN Web Docs. Cómo escribir en Markdown:
+   https://developer.mozilla.org/es/docs/MDN/Writing_guidelines/Howto/Markdown_in_MDN
+
+3. React. Documentación oficial:
+   https://react.dev/learn
+
+4. Express. Routing:
+   https://expressjs.com/en/5x/guide/routing/
+
+5. TypeScript. Documentación oficial:
+   https://www.typescriptlang.org/docs/
+
+6. Vite. Guía oficial:
+   https://vite.dev/guide/
+
+7. Zod. Documentación oficial:
+   https://zod.dev/
+
+8. Vitest. Guía oficial:
+   https://vitest.dev/guide/
+
+9. React Testing Library. Introducción:
+   https://testing-library.com/docs/react-testing-library/intro/
+
+10. Tailwind CSS. Responsive design:
+    https://tailwindcss.com/docs/responsive-design
+
+Antes de incluir una fuente:
+
+* Comprueba que la URL corresponda al tema.
+* Prefiere fuentes en español cuando estén disponibles.
+* Se permiten fuentes oficiales en inglés cuando no exista documentación oficial equivalente en español.
+* No cites blogs genéricos.
+* No inventes autores, fechas ni títulos.
+* No uses una fuente para justificar una afirmación que no contiene.
+* No satures cada párrafo con referencias.
+* La explicación del código debe apoyarse principalmente en los archivos del repositorio.
+
+---
+
+# 33. Conclusiones
+
+Redacta conclusiones que expliquen:
+
+* Cómo Scrum permitió organizar el ciclo simulado.
+* Cómo el Product Backlog transformó el problema en trabajo priorizado.
+* Cómo el Sprint Backlog hizo visible el avance.
+* Cómo las Daily permitieron adaptar el plan.
+* Cómo los Burn Down mostraron el trabajo restante.
+* Cómo las pruebas respaldaron la calidad.
+* Cómo el alcance fue adecuado para el tiempo académico.
+* Cómo el producto cumplió el caso práctico.
+* Qué queda pendiente: evidencias finales, GitHub, release y despliegue.
+
+No escribas afirmaciones grandilocuentes.
+
+---
+
+# 34. Reglas de redacción y formato
+
+* Escribe en español.
+* Utiliza Markdown válido.
+* Mantén títulos jerárquicos.
+* Deja una línea en blanco antes y después de listas y tablas.
+* No escribas párrafos excesivamente largos.
+* Usa tablas cuando simplifiquen datos.
+* Utiliza negrilla con moderación.
+* Utiliza bloques de cita para las evidencias pendientes.
+* Utiliza comas decimales en la explicación académica.
+* Conserva puntos decimales únicamente dentro de código o respuestas JSON.
+* Escribe `Scrum Master`, `Product Owner`, `Sprint`, `Daily Scrum`, `Sprint Review`, `Sprint Retrospective`, `Product Backlog`, `Sprint Backlog`, `Incremento`, `Objetivo del Producto`, `Objetivo del Sprint` y `Definición de Terminado` de forma consistente.
+* No llames “reunión diaria de estado” a la Daily Scrum.
+* No llames Burn Up a los dos gráficos existentes.
+* No inventes un segundo Sprint.
+* No inventes una base de datos.
+* No inventes usuarios autenticados.
+* No inventes compras.
+* No inventes despliegue.
+* No atribuyas commits falsos.
+* No uses rutas absolutas personales.
+
+---
+
+# 35. Orden obligatorio de la documentación
+
+La nueva documentación debe seguir este orden:
+
+1. Título de PixelPets.
+2. Nota de simulación académica.
+3. Identificación del proyecto.
+4. Resumen ejecutivo.
+5. Comprensión del problema.
+6. Alcance.
+7. Visión y Objetivo del Producto.
+8. Equipo Scrum y responsabilidades.
+9. Casos de uso comprometidos.
+10. Adaptación académica de Scrum.
+11. Product Backlog en Markdown.
+12. Captura del Product Backlog.
+13. Historias y criterios de aceptación.
+14. Priorización y estimación.
+15. Sprint Planning.
+16. Objetivo del Sprint.
+17. Definition of Ready.
+18. Definition of Done.
+19. Sprint Backlog por puntos en Markdown.
+20. Captura de la tabla por puntos.
+21. Captura de la gráfica Burn Down de puntos.
+22. Análisis del Burn Down de puntos.
+23. Sprint Backlog por horas en Markdown.
+24. Captura de la tabla por horas.
+25. Captura de la gráfica Burn Down de horas.
+26. Análisis del Burn Down de horas.
+27. Tabla de notas en Markdown.
+28. Captura de la tabla de notas.
+29. Doce Daily Scrum.
+30. Arquitectura.
+31. Estructura del proyecto.
+32. Flujo funcional.
+33. Endpoints.
+34. Fragmentos de código.
+35. Decisiones justificadas.
+36. Matriz de trazabilidad.
+37. Pruebas y calidad.
+38. Evidencias funcionales pendientes.
+39. Sprint Review.
+40. Sprint Retrospective.
+41. Métricas.
+42. Estado de Git.
+43. Enlaces pendientes.
+44. Conclusiones.
+45. Referencias.
+
+No alteres este orden.
+
+---
+
+# 36. Revisión final obligatoria
+
+Antes de finalizar:
+
+1. Confirma que el enunciado original permanezca idéntico.
+2. Confirma que únicamente se modificó `pivote-2026-20.md`.
+3. Comprueba que aparecen las ocho historias.
+4. Comprueba que aparecen las 24 tareas.
+5. Comprueba que el total sea 40 puntos.
+6. Comprueba que cada integrante tenga 20 puntos.
+7. Comprueba que aparezcan los 12 días.
+8. Comprueba que las horas sumen 120.
+9. Comprueba que los puntos sumen 40.
+10. Comprueba que las Daily coincidan con los Excel.
+11. Comprueba que existan los marcadores de capturas.
+12. Comprueba que el orden sea tabla y después gráfica.
+13. Comprueba que las dos gráficas sean llamadas Burn Down.
+14. Comprueba que no se afirme que existe despliegue.
+15. Comprueba que no se afirme que existe GitHub Release.
+16. Comprueba que los fragmentos provengan del código real.
+17. Comprueba que los comandos coincidan con `package.json`.
+18. Comprueba que los endpoints coincidan con el servidor.
+19. Comprueba que las pruebas sumen 38.
+20. Ejecuta:
+
+```bash
+git diff --check
+git status --short
+```
+
+Revisa finalmente el diff específico:
+
+```bash
+git diff -- pivote-2026-20.md
+```
+
+Si el archivo no está seguido por Git, revisa directamente que solo se haya agregado contenido al final.
+
+---
+
+# 37. Informe final
+
+Cuando termines, responde con un informe breve que incluya:
+
+## Archivo
+
+* Archivo modificado.
+* Confirmación de que el enunciado original no fue alterado.
+* Cantidad aproximada de líneas agregadas.
+
+## Contenido
+
+* Secciones documentadas.
+* Cantidad de historias y tareas.
+* Daily Scrum agregadas.
+* Tablas agregadas.
+* Marcadores de capturas agregados.
+* Fragmentos de código agregados.
+* Referencias agregadas.
+
+## Verificación
+
+* Resultado de `git diff --check`.
+* Archivos modificados.
+* Confirmación de que no modificaste código ni Excel.
+
+## Estado
+
+* Confirmación de que no hiciste commit.
+* Confirmación de que no hiciste push.
+* Confirmación de que no hiciste merge.
+* Confirmación de que no desplegaste.
+* Lista de evidencias que el usuario todavía debe insertar.
+* Indicación de que los enlaces de GitHub, Release y despliegue permanecen pendientes.
+
+No pegues nuevamente todo el documento en el informe final.
+
+---
+
+# 38. Instrucción final
+
+Comienza leyendo por completo `pivote-2026-20.md`, los dos Excel finales, el README y el código relevante.
+
+Después modifica únicamente `pivote-2026-20.md`, preserva todo el contenido original y agrega debajo la documentación integral, coherente, verificable y detallada del ciclo Scrum simulado de PixelPets.
+
+No te detengas a pedir confirmación por decisiones menores. Resuélvelas mediante los archivos existentes y las reglas de este prompt.
