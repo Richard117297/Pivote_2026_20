@@ -5,23 +5,23 @@ interface HealthBarProps {
 }
 
 function getHealthColor(health: number): string {
-  if (health >= 70) return "from-emerald-400 to-green-300";
-  if (health >= 40) return "from-amber-400 to-yellow-300";
-  return "from-rose-500 to-orange-400";
+  if (health >= 70) return "bg-[#3f7d56]";
+  if (health >= 40) return "bg-[#e67e22]";
+  return "bg-[#b94a32]";
 }
 
 export function HealthBar({ health }: HealthBarProps) {
   return (
     <div>
-      <div className="mb-2 flex items-center justify-between text-xs">
-        <span className="flex items-center gap-1.5 font-medium text-slate-400">
+      <div className="mb-1.5 flex items-center justify-between text-xs">
+        <span className="flex items-center gap-1.5 font-bold text-[#765b4b]">
           <HeartPulse aria-hidden="true" size={15} />
           Salud
         </span>
-        <span className="font-mono font-bold text-slate-100">{health}%</span>
+        <span className="font-bold text-[#38251d]">{health}%</span>
       </div>
       <div
-        className="h-2 overflow-hidden rounded-full bg-white/10"
+        className="h-2 overflow-hidden rounded-full bg-[#eaded3]"
         role="progressbar"
         aria-label={`Salud: ${health}%`}
         aria-valuemin={0}
@@ -29,7 +29,7 @@ export function HealthBar({ health }: HealthBarProps) {
         aria-valuenow={health}
       >
         <div
-          className={`h-full rounded-full bg-gradient-to-r ${getHealthColor(health)}`}
+          className={`h-full rounded-full ${getHealthColor(health)}`}
           style={{ width: `${health}%` }}
         />
       </div>

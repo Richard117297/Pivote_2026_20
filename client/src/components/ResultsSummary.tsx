@@ -12,26 +12,26 @@ export function ResultsSummary({
   isLoading,
 }: ResultsSummaryProps) {
   return (
-    <div className="mb-6 flex items-center justify-between gap-4">
+    <div className="mb-4 flex items-end justify-between gap-3 border-b border-[#dfcdbd] pb-3">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-300">
+        <p className="text-[0.68rem] font-bold uppercase tracking-[0.18em] text-[#c2410c]">
           Catálogo
         </p>
-        <h2 id="catalog-title" className="mt-1 font-display text-2xl font-bold text-white sm:text-3xl">
+        <h2 id="catalog-title" className="font-display text-2xl font-bold leading-tight text-[#2f211a] sm:text-3xl">
           Criaturas encontradas
         </h2>
       </div>
       <div
-        className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-300"
+        className="flex shrink-0 items-center gap-2 rounded-full border border-[#f1b486] bg-[#fff7ed] px-3 py-1.5 text-sm font-bold text-[#7c2d12]"
         role="status"
         aria-live="polite"
       >
-        <LayoutGrid aria-hidden="true" size={17} className="text-violet-300" />
+        <LayoutGrid aria-hidden="true" size={16} className="text-[#ea580c]" />
         {isLoading ? (
           <span>Actualizando…</span>
         ) : (
           <span>
-            <strong className="text-white">{filtered}</strong>
+            <strong className="text-[#c2410c]">{filtered}</strong>
             <span aria-hidden="true"> / </span>
             <span className="sr-only"> de </span>
             {total}

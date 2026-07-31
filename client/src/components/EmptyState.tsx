@@ -2,20 +2,20 @@ import { SearchX } from "lucide-react";
 
 export function EmptyState({ onClear }: { onClear: () => void }) {
   return (
-    <div className="rounded-3xl border border-dashed border-violet-300/25 bg-violet-300/[0.04] px-5 py-16 text-center">
-      <span className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-violet-400/10 text-violet-200">
-        <SearchX aria-hidden="true" size={30} />
+    <div className="rounded-2xl border border-dashed border-[#e7a778] bg-[#fff8f1] px-5 py-12 text-center">
+      <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-[#ffedd5] text-[#c2410c]">
+        <SearchX aria-hidden="true" size={27} />
       </span>
-      <h3 className="mt-5 font-display text-xl font-bold text-white">
+      <h3 className="mt-4 font-display text-xl font-bold text-[#2f211a]">
         Ninguna criatura coincide
       </h3>
-      <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-400">
+      <p className="mx-auto mt-1.5 max-w-md text-sm leading-6 text-[#765b4b]">
         Prueba otro nombre o abre los filtros para explorar más rincones de la colección.
       </p>
       <button
         type="button"
         onClick={onClear}
-        className="mt-6 min-h-11 rounded-xl bg-violet-500 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-violet-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b1c]"
+        className="mt-5 min-h-10 rounded-lg bg-[#ea580c] px-5 py-2 text-sm font-bold text-white hover:bg-[#c2410c] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ea580c] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fff8f1]"
       >
         Ver todas las criaturas
       </button>

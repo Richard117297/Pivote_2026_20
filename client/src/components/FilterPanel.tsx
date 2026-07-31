@@ -19,9 +19,6 @@ interface FilterPanelProps {
   onClear: () => void;
 }
 
-const selectClass =
-  "h-12 w-full appearance-none rounded-xl border border-white/10 bg-[#11152b] px-4 text-sm text-slate-100 outline-none transition hover:border-violet-300/30 focus:border-cyan-300/60 focus:ring-4 focus:ring-cyan-300/10 disabled:cursor-not-allowed disabled:opacity-60";
-
 export function FilterPanel({
   filters,
   options,
@@ -30,124 +27,144 @@ export function FilterPanel({
   onFilterChange,
   onClear,
 }: FilterPanelProps) {
+  const selectClass = (active: boolean) =>
+    `h-11 w-full appearance-none rounded-lg border bg-white px-3 text-sm text-[#38251d] outline-none focus:border-[#ea580c] focus:ring-2 focus:ring-[#fed7aa] disabled:cursor-not-allowed disabled:opacity-60 ${
+      active
+        ? "border-[#ea580c] bg-[#fff7ed] font-bold text-[#9a3412]"
+        : "border-[#ddcdbf] hover:border-[#c99f82]"
+    }`;
+
   return (
-    <section
+    <aside
       aria-label="Búsqueda y filtros"
-      className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
+      className="rounded-2xl border border-[#dfcdbd] bg-[#fffdf9] p-4 shadow-[0_12px_35px_rgba(87,52,34,0.08)] lg:sticky lg:top-4"
     >
-      <div className="rounded-3xl border border-white/10 bg-[#0e1227]/90 p-4 shadow-card backdrop-blur-xl sm:p-6">
-        <div className="mb-4 flex flex-col items-start justify-between gap-3 min-[400px]:flex-row min-[400px]:items-center">
-          <div className="flex items-center gap-2">
-            <SlidersHorizontal aria-hidden="true" className="text-cyan-300" size={19} />
-            <h2 className="font-display font-semibold text-white">
-              Encuentra tu PixelPet
-            </h2>
-          </div>
-          <span
-            className="rounded-full bg-violet-400/10 px-3 py-1 text-xs font-semibold text-violet-200"
-            aria-live="polite"
-          >
-            {activeFilterCount} {activeFilterCount === 1 ? "filtro activo" : "filtros activos"}
+      <div className="mb-4 border-b border-[#eaded3] pb-3">
+        <div className="flex items-center gap-2 text-[#2f211a]">
+          <span className="grid h-8 w-8 place-items-center rounded-full bg-[#ffedd5] text-[#c2410c]">
+            <SlidersHorizontal aria-hidden="true" size={17} />
           </span>
+          <h2 className="font-display text-lg font-bold leading-tight">
+            Encuentra tu compañero ideal
+          </h2>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-[1.5fr_1fr_1fr_1fr_auto]">
-          <div>
-            <label htmlFor="pet-search" className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-400">
-              Nombre
-            </label>
-            <div className="relative">
-              <Search
-                aria-hidden="true"
-                className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-500"
-                size={18}
-              />
-              <input
-                id="pet-search"
-                type="search"
-                value={filters.search}
-                onChange={(event) => onFilterChange("search", event.target.value)}
-                placeholder="Ej. Luna, Nova..."
-                className="h-12 w-full rounded-xl border border-white/10 bg-[#11152b] pl-11 pr-4 text-sm text-white outline-none transition placeholder:text-slate-600 hover:border-violet-300/30 focus:border-cyan-300/60 focus:ring-4 focus:ring-cyan-300/10"
-              />
-            </div>
-          </div>
-
-          <div>
-            <label htmlFor="species-filter" className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-400">
-              Especie
-            </label>
-            <select
-              id="species-filter"
-              value={filters.species}
-              disabled={disabled}
-              onChange={(event) =>
-                onFilterChange("species", event.target.value as PetSpecies | "")
-              }
-              className={selectClass}
-            >
-              <option value="">Todas las especies</option>
-              {options?.species.map((species) => (
-                <option key={species} value={species}>{species}</option>
-              ))}
-            </select>
-          </div>
-
-          <div>
-            <label htmlFor="rarity-filter" className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-400">
-              Rareza
-            </label>
-            <select
-              id="rarity-filter"
-              value={filters.rarity}
-              disabled={disabled}
-              onChange={(event) =>
-                onFilterChange("rarity", event.target.value as PetRarity | "")
-              }
-              className={selectClass}
-            >
-              <option value="">Todas las rarezas</option>
-              {options?.rarities.map((rarity) => (
-                <option key={rarity} value={rarity}>{rarity}</option>
-              ))}
-            </select>
-          </div>
-
-          <div>
-            <label htmlFor="sort-filter" className="mb-2 block text-xs font-semibold uppercase tracking-wider text-slate-400">
-              Orden
-            </label>
-            <select
-              id="sort-filter"
-              value={filters.sort}
-              disabled={disabled}
-              onChange={(event) =>
-                onFilterChange("sort", event.target.value as PetSort)
-              }
-              className={selectClass}
-            >
-              <option value="">Orden original</option>
-              {options?.sort.map((sortOption) => (
-                <option key={sortOption.value} value={sortOption.value}>
-                  {sortOption.label}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          <div className="flex items-end">
-            <button
-              type="button"
-              onClick={onClear}
-              disabled={activeFilterCount === 0}
-              className="flex h-12 w-full items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 text-sm font-semibold text-slate-200 transition hover:border-cyan-300/30 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 disabled:cursor-not-allowed disabled:opacity-40 xl:w-auto"
-            >
-              <RotateCcw aria-hidden="true" size={17} />
-              Limpiar
-            </button>
-          </div>
-        </div>
+        <span
+          className={`mt-2 inline-flex rounded-full px-2.5 py-1 text-xs font-bold ${
+            activeFilterCount > 0
+              ? "bg-[#ea580c] text-white"
+              : "bg-[#f1e7de] text-[#765b4b]"
+          }`}
+          aria-live="polite"
+        >
+          {activeFilterCount} {activeFilterCount === 1 ? "filtro activo" : "filtros activos"}
+        </span>
       </div>
-    </section>
+
+      <div className="grid gap-3.5 sm:grid-cols-2 lg:grid-cols-1">
+        <div className="sm:col-span-2 lg:col-span-1">
+          <label htmlFor="pet-search" className="mb-1.5 block text-xs font-bold uppercase tracking-[0.12em] text-[#765b4b]">
+            Nombre
+          </label>
+          <div className="relative">
+            <Search
+              aria-hidden="true"
+              className={`pointer-events-none absolute inset-y-0 left-3 my-auto ${
+                filters.search !== "" ? "text-[#ea580c]" : "text-[#9b8576]"
+              }`}
+              size={17}
+            />
+            <input
+              id="pet-search"
+              type="search"
+              value={filters.search}
+              onChange={(event) => onFilterChange("search", event.target.value)}
+              placeholder="Ej. Luna, Nova..."
+              className={`h-11 w-full rounded-lg border bg-white pl-10 pr-3 text-sm text-[#38251d] outline-none placeholder:text-[#ad9a8e] focus:border-[#ea580c] focus:ring-2 focus:ring-[#fed7aa] ${
+                filters.search !== ""
+                  ? "border-[#ea580c] bg-[#fff7ed] font-bold"
+                  : "border-[#ddcdbf] hover:border-[#c99f82]"
+              }`}
+            />
+          </div>
+        </div>
+
+        <div>
+          <label htmlFor="species-filter" className="mb-1.5 block text-xs font-bold uppercase tracking-[0.12em] text-[#765b4b]">
+            Especie
+          </label>
+          <select
+            id="species-filter"
+            value={filters.species}
+            disabled={disabled}
+            onChange={(event) =>
+              onFilterChange("species", event.target.value as PetSpecies | "")
+            }
+            className={selectClass(filters.species !== "")}
+          >
+            <option value="">Todas las especies</option>
+            {options?.species.map((species) => (
+              <option key={species} value={species}>{species}</option>
+            ))}
+          </select>
+        </div>
+
+        <div>
+          <label htmlFor="rarity-filter" className="mb-1.5 block text-xs font-bold uppercase tracking-[0.12em] text-[#765b4b]">
+            Rareza
+          </label>
+          <select
+            id="rarity-filter"
+            value={filters.rarity}
+            disabled={disabled}
+            onChange={(event) =>
+              onFilterChange("rarity", event.target.value as PetRarity | "")
+            }
+            className={selectClass(filters.rarity !== "")}
+          >
+            <option value="">Todas las rarezas</option>
+            {options?.rarities.map((rarity) => (
+              <option key={rarity} value={rarity}>{rarity}</option>
+            ))}
+          </select>
+        </div>
+
+        <div className="sm:col-span-2 lg:col-span-1">
+          <label htmlFor="sort-filter" className="mb-1.5 block text-xs font-bold uppercase tracking-[0.12em] text-[#765b4b]">
+            Orden
+          </label>
+          <select
+            id="sort-filter"
+            value={filters.sort}
+            disabled={disabled}
+            onChange={(event) =>
+              onFilterChange("sort", event.target.value as PetSort)
+            }
+            className={selectClass(filters.sort !== "")}
+          >
+            <option value="">Orden original</option>
+            {options?.sort.map((sortOption) => (
+              <option key={sortOption.value} value={sortOption.value}>
+                {sortOption.label}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <button
+          type="button"
+          onClick={onClear}
+          disabled={activeFilterCount === 0}
+          className={`flex h-10 w-full items-center justify-center gap-2 rounded-lg border px-4 text-sm font-bold focus:outline-none focus-visible:ring-2 focus-visible:ring-[#ea580c] focus-visible:ring-offset-2 disabled:cursor-not-allowed ${
+            activeFilterCount > 0
+              ? "border-[#c2410c] bg-[#ea580c] text-white hover:bg-[#c2410c]"
+              : "border-[#ded0c4] bg-[#f3ebe4] text-[#9a877a] disabled:opacity-70"
+          } sm:col-span-2 lg:col-span-1`}
+        >
+          <RotateCcw aria-hidden="true" size={16} />
+          Limpiar
+        </button>
+      </div>
+    </aside>
   );
 }

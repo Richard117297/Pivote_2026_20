@@ -7,18 +7,18 @@ interface ErrorStateProps {
 
 export function ErrorState({ message, onRetry }: ErrorStateProps) {
   return (
-    <div role="alert" className="rounded-3xl border border-rose-400/20 bg-rose-400/[0.05] px-5 py-16 text-center">
-      <span className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-rose-400/10 text-rose-200">
-        <WifiOff aria-hidden="true" size={30} />
+    <div role="alert" className="rounded-2xl border border-[#d98c74] bg-[#fff4ef] px-5 py-12 text-center">
+      <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-[#f8ddd4] text-[#9f3f2f]">
+        <WifiOff aria-hidden="true" size={27} />
       </span>
-      <h3 className="mt-5 font-display text-xl font-bold text-white">
+      <h3 className="mt-4 font-display text-xl font-bold text-[#2f211a]">
         La señal interestelar falló
       </h3>
-      <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-300">{message}</p>
+      <p className="mx-auto mt-1.5 max-w-md text-sm leading-6 text-[#765b4b]">{message}</p>
       <button
         type="button"
         onClick={onRetry}
-        className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-xl bg-rose-500 px-5 py-2.5 text-sm font-bold text-white transition hover:bg-rose-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300 focus-visible:ring-offset-2 focus-visible:ring-offset-[#090b1c]"
+        className="mt-5 inline-flex min-h-10 items-center gap-2 rounded-lg bg-[#b94a32] px-5 py-2 text-sm font-bold text-white hover:bg-[#973b29] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b94a32] focus-visible:ring-offset-2 focus-visible:ring-offset-[#fff4ef]"
       >
         <RefreshCw aria-hidden="true" size={17} />
         Reintentar conexión
