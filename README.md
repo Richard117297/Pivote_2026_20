@@ -145,6 +145,15 @@ La aplicación completa queda disponible en `http://localhost:3000`. El servidor
 acepta la variable de entorno opcional `PORT`; si no está definida utiliza el
 puerto `3000`.
 
+## Despliegue en Render
+
+El repositorio incluye un Blueprint para desplegar PixelPets como un único Web
+Service de Render. El servicio compila los workspaces, inicia el backend
+compilado y sirve desde Express tanto la API como el frontend de React.
+
+Consulta la configuración, la conexión del repositorio privado y las
+verificaciones posteriores en [DESPLIEGUE.md](./DESPLIEGUE.md).
+
 ## Endpoints de la API
 
 | Método | Ruta | Descripción |
@@ -176,7 +185,8 @@ backend; no se requiere base de datos para los casos de uso actuales.
 
 No se incluyen autenticación, perfiles, favoritos persistentes, carrito,
 compras, pagos, CRUD, panel administrativo, carga de imágenes, WebSockets,
-microservicios, Docker, integración continua ni despliegue.
+microservicios ni Docker. La configuración incluida prepara el despliegue en
+Render, pero no publica la aplicación por sí sola.
 
 La documentación de Scrum —Product Backlog, Sprint Backlog, dailies, burndown,
 Sprint Review y Sprint Retrospective— se completará en una etapa posterior. El
